@@ -31,7 +31,7 @@ export default function Projects() {
     <section id="projects" className="text-gray-400 bg-gray-900 body-font">
       <div className="container px-5 py-10 mx-auto text-center lg:px-40">
         <div className="flex flex-col w-full mb-20">
-          <img className="mx-auto inline-block w-10 mb-4"></img>
+          <img alt="Projects" src="./icons/code.svg" className="mx-auto inline-block w-20 mb-4"></img>
           <h1 className="sm:text-4xl text-3xl font-medium title-font mb-4 text-white">
             Projects
           </h1>

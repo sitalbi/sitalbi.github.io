@@ -18,7 +18,7 @@ export default function Skills() {
     <section id="skills">
       <div className="container px-5 py-10 mx-auto">
         <div className="text-center mb-20">
-          <img className="w-10 inline-block mb-4"></img>
+          <img alt="Skills" src="./icons/chip.svg" className="w-20 inline-block mb-4"></img>
           <h1 className="sm:text-4xl text-3xl font-medium title-font text-white mb-4">
             Skills &amp; Technologies
           </h1>
