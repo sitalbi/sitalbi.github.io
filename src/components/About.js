@@ -10,7 +10,8 @@ export default function About() {
             </h1>
             <p className="mb-8 leading-relaxed">
             Currently studying for a Master's degree in Software Engineering at the University of Bordeaux, 
-            I am fond of complex algorithms and their implementations in precise problems as well as video game creation and development. 
+            I am fond of complex algorithms and their implementations in precise problems, machine learning as well as video game creation and development. 
+            I am also pretty interested by game engine and have actually the goal to program my own.
             </p>
             <div className="flex justify-center">
               <a
