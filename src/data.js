@@ -1,6 +1,6 @@
 export const projects = [
   {
-    title: "Raycasting Gaphics",
+    title: "Raycasting Graphics",
     subtitle: "OpenGL",
     description: "",
     image: "./raycast.png",
