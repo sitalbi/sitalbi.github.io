@@ -16,12 +16,12 @@ export const projects = [
     link: "https://github.com/sitalbi/2D_prototype",
   },
   {
-    title: "A-star",
+    title: "Procedural Animation",
     subtitle: "Unity",
     description: "",
-    image: "./astar.png",
-    gif: "./astar.gif",
-    link: "https://github.com/sitalbi/a-star",
+    image: "./anim_procedural.png",
+    gif: "./anim_procedural.gif",
+    link: "https://github.com/sitalbi/procedural_anim",
   },
   {
     title: "Liminal perspective",
