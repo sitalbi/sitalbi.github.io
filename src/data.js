@@ -1,11 +1,11 @@
 export const projects = [
   {
-    title: "Raycasting Graphics",
+    title: "Gravity Simulation",
     subtitle: "OpenGL",
     description: "",
-    image: "./raycast.png",
-    gif: "./raycast.gif",
-    link: "https://github.com/sitalbi/raycasting-engine",
+    image: "./gravity.png",
+    gif: "./gravity.gif",
+    link: "https://github.com/sitalbi/gravity-simulation",
   },
   {
     title: "2D Prototype",
