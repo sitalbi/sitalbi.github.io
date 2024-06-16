@@ -1,19 +1,19 @@
 export const projects = [
   {
     title: "Gravity Simulation",
-    subtitle: "OpenGL",
+    subtitle: "C++ OpenGL",
     description: "",
     image: "./gravity.png",
     gif: "./gravity.gif",
     link: "https://github.com/sitalbi/gravity-simulation",
   },
   {
-    title: "2D Prototype",
-    subtitle: "Unity",
+    title: "3D Prototype",
+    subtitle: "Unreal Engine",
     description: "",
-    image: "./2D_prototype.png",
-    gif: "./2D_prototype.gif",
-    link: "https://github.com/sitalbi/2D_prototype",
+    image: "./thirdperson.png",
+    gif: "./thirdperson.gif",
+    link: "https://github.com/sitalbi/third-person-prototype",
   },
   {
     title: "Procedural Animation",
@@ -25,7 +25,7 @@ export const projects = [
   },
   {
     title: "Liminal perspective",
-    subtitle: "",
+    subtitle: "Unity",
     description: "",
     image: "./liminal.png",
     gif: "./liminal.gif",
