@@ -9,7 +9,7 @@ export default function About() {
               Hi, I'm Simon.
             </h1>
             <p className="mb-8 leading-relaxed">
-            Currently studying for a Master's degree in Software Engineering at the University of Bordeaux, 
+            Graduated from a Master's degree in Software Engineering at the University of Bordeaux, 
             I am fond of game development, computer graphics and game engines. You can find some of my ongoing personal projects below.
             </p>
             <div className="flex justify-center">
