@@ -3,9 +3,9 @@ import { skills } from "../data";
 
 const listOfSkills = (skills) => {
   return skills.map(skill => (
-    <div className="w-1/12 relative mx-5 my-5">
+    <div className="w-1/12 relative my-5">
       <img
-        className="object-cover"
+        className="object-cover w-20 h-20"
         alt={skill.title}
         src={skill.image}>
       </img>

@@ -24,7 +24,7 @@ export default function About() {
             <img
               className="object-cover rounded-full h-96 w-96"
               alt="Profile"
-              src="./photo.png"
+              src="https://avatars.githubusercontent.com/u/64929584?s=400&u=af853658b67aa659383efd59fa05d52e242d5e73&v=4"
             />
           </div>
         </div>
