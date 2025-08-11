@@ -1,11 +1,19 @@
 export const projects = [
   {
-    title: "Gravity Simulation",
+    title: "PBR Renderer",
+    subtitle: "OpenGL",
+    description: "",
+    image: "./renderer.png",
+    gif: "./renderer.gif",
+    link: "https://github.com/sitalbi/PBR-Renderer",
+  },
+  {
+    title: "Voxel Game",
     subtitle: "C++ OpenGL",
     description: "",
-    image: "./gravity.png",
-    gif: "./gravity.gif",
-    link: "https://github.com/sitalbi/gravity-simulation",
+    image: "./voxl.png",
+    gif: "./voxl.gif",
+    link: "https://github.com/sitalbi/voxel-game",
   },
   {
     title: "3D Prototype",
@@ -22,14 +30,6 @@ export const projects = [
     image: "./anim_procedural.png",
     gif: "./anim_procedural.gif",
     link: "https://github.com/sitalbi/procedural_anim",
-  },
-  {
-    title: "Liminal perspective",
-    subtitle: "Unity",
-    description: "",
-    image: "./liminal.png",
-    gif: "./liminal.gif",
-    link: "https://github.com/sitalbi/liminal-perspective",
   },
 ];
 
