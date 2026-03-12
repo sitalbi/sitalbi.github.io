@@ -7,7 +7,7 @@ description: Voxel game inspired by Minecraft written in C++ using OpenGL 4.5.
 # Voxel Game
 
 <img
-  src="https://camo.githubusercontent.com/a02ef025f485827c6ec68a738ddc1b327e76c39848a07141db6894cffb857954/68747470733a2f2f73696d6f6e6f2e66722f766f786c322e706e67"
+  src="/images/voxl.png"
   alt="Voxel Game"
   width="100%"
 />
@@ -34,13 +34,13 @@ Voxel game inspired by Minecraft written in C++ using OpenGL 4.5.
 
 ## Overview
 
-This is a demo of a minecraft inspired voxel game. It contains basic movement and interaction (placing and removing cubes). The world is procedurally generated and only contains one biome at the moment. 
+This is a demo of a Minecraft-inspired voxel game. It contains basic movement and interaction (placing and removing cubes). The world is procedurally generated and only contains one biome at the moment. 
 
 The plan going forward is to extend the features: adding multi-block placement, multi biomes, caves, light-emitting blocks, etc...
 
 ## Features
 
-This demo include the following features:
+This demo includes the following features:
 
 - Chunk-based rendering
 - Infinite world generation using basic thread pool for chunk generation
@@ -79,7 +79,7 @@ Next steps include better chunk streaming priority, stronger multithreading arch
 
 <div class="project-gallery">
   <img
-    src="https://camo.githubusercontent.com/a02ef025f485827c6ec68a738ddc1b327e76c39848a07141db6894cffb857954/68747470733a2f2f73696d6f6e6f2e66722f766f786c322e706e67"
+    src="/images/voxl.png"
     alt="Screenshot 1"
     class="gallery-image"
   />

@@ -7,7 +7,7 @@ description: Voxel game inspired by Minecraft written in C++ using OpenGL 4.5.
 # Voxel Game
 
 <img
-  src="../public/images/thirdperson.gif"
+  src="/images/thirdperson.gif"
   alt="Voxel Game"
   width="100%"
 />

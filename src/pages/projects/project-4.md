@@ -7,7 +7,7 @@ description: A simple procedural animation prototype in Unity.
 # Procedural Animation Prototype
 
 <img
-  src="../public/images/anim_procedural.gif"
+  src="/images/anim_procedural.gif"
   alt="anim_procedural"
   width="100%"
 />
