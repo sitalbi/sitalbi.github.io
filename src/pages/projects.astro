@@ -1,0 +1,23 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import { projects } from "../data/projects";
+---
+
+<BaseLayout title="Projects" description="Portfolio projects">
+  <h1>Projects</h1>
+  <p class="muted">A selection of personal projects.</p>
+
+  <div class="projects-grid">
+    {
+      projects.map((project) => (
+        <a href={project.url} class="project-card">
+          <img src={project.image} alt={project.title} class="project-image" />
+
+          <h2 class="project-card-title">{project.title}</h2>
+
+          <p class="project-card-description">{project.description}</p>
+        </a>
+      ))
+    }
+  </div>
+</BaseLayout>
