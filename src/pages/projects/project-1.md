@@ -35,9 +35,7 @@ A real time physically based renderer written in C++ with OpenGL.
 
 ## Overview
 
-This is a simple real time physically based renderer written in C++ with OpenGL. It implements the Cook-Torrance BRDF microfacet model to simulate the reflection of light on a surface.
-
-This project started as a learning exercise and was not intended for production use. The goal was for me to have a project where I could try to design a renderer and its base architecture as well as implement various PBR techniques using OpenGL. It is now a goal to refactor it to make it modular and usable as a library for future graphics projects.
+This project is primarily a learning and experimentation project. The goal is to explore rendering techniques and renderer/software architecture design rather than provide a production-ready engine. It is not fully optimized yet and may contain bugs.
 
 ## Features
 
@@ -53,75 +51,83 @@ This project started as a learning exercise and was not intended for production 
 - Shadow mapping for both directional and point lights
 
 ## Technical Details
-
 ### Rendering Pipeline
 
-The renderer currently uses a forward rendering pipeline. Each object is rendered using its associated material and lighting information in a single pass. While simple, this approach was chosen to keep the architecture understandable during the early stages of the project.
+The renderer is currently based on a forward rendering pipeline. Each renderable is submitted with its mesh, material, and transform data, and processed in a single lighting pass.
 
-The rendering process includes several stages such as shadow map generation, lighting evaluation, and post-processing effects including SSAO and HDR bloom.
+The rendering is organized into explicit passes, including shadow map generation, main lighting, and post-processing. While the pipeline remains forward for now, the architecture has been refactored to keep rendering stages clearly separated, allowing future extensions such as deferred rendering.
 
 ### Physically Based Shading
 
-The shading model is based on the Cook-Torrance microfacet BRDF.
+Shading is implemented using the Cook-Torrance microfacet BRDF.
 
-Material properties such as albedo, roughness, and metallic are provided through textures, in order to have physically based materials.
+Materials are defined through a data-driven approach, with parameters such as albedo, roughness, metallic, and ambient occlusion provided via textures or constants. This enables physically based rendering workflows and consistent material behavior under different lighting conditions.
 
-### Image Based Lighting
+### Image-Based Lighting
 
-The renderer supports image based lighting (IBL) for both diffuse and specular lighting contributions.
+The renderer supports image-based lighting (IBL) for both diffuse and specular contributions.
 
-Environment lighting is derived from HDR skyboxes. The renderer generates the required precomputed maps, including irradiance maps for diffuse lighting and prefiltered environment maps for specular reflections. A BRDF lookup texture is also used to approximate the specular integration.
+HDR environment maps are processed at load time to generate:
 
-This allows objects to receive realistic lighting from the environment even without direct light sources.
+- irradiance maps for diffuse lighting
+
+- prefiltered environment maps for specular reflections
+
+- a BRDF lookup texture for efficient specular integration
+
+These precomputed resources are integrated into the lighting pass, allowing objects to receive realistic ambient lighting from the environment.
 
 ### Shadows
 
-The renderer supports shadow mapping for both directional lights and point lights.
+Shadow mapping is implemented for both directional and point lights.
 
-Directional lights use a standard depth map generated from the light’s perspective.
-Point lights use a cubemap shadow map to capture depth in all directions around the light source.
+- Directional lights use a 2D depth map rendered from the light’s view.
 
-These shadow maps are then sampled during the lighting pass to determine shadowed fragments.
+- Point lights use cubemap shadow maps to capture omnidirectional depth.
 
-### Post Processing
+Shadow data is generated in dedicated passes and sampled during lighting to determine visibility.
 
-Several screen-space effects are implemented:
+### Post-Processing
 
-SSAO (Screen Space Ambient Occlusion) to approximate small-scale occlusion
+Post-processing is handled through a sequence of fullscreen passes using framebuffers.
 
-HDR rendering and bloom to simulate high-intensity light bleeding
+Current effects include:
 
-These effects are applied as post-processing passes using framebuffers.
+- SSAO (Screen Space Ambient Occlusion) for local occlusion approximation
+
+- HDR rendering with bloom for high-intensity light scattering
+
+The post-processing pipeline is modular and can be extended with additional effects.
 
 ### Architecture
 
-The project is structured around a small rendering framework responsible for:
+The project is split into two main components:
 
-- mesh and model loading using Assimp
+- **renderer/**  
+  Contains the rendering backend (OpenGL abstraction, materials, render passes, etc.).  
+  Designed to be reusable and integrated into other projects.
 
-- material management
+- **app/**  
+  A lightweight application used to test and visualize the renderer.  
+  Handles scene setup, camera, UI (ImGui), and model loading.
 
-- shader abstraction
+Rendering operates on lightweight data (render meshes, materials, transforms) rather than high-level scene objects, enabling better decoupling and scalability.
 
-- texture and framebuffer management
-
-- scene rendering
-
-The goal is to progressively refactor the renderer into a more modular architecture where the rendering backend can be reused independently of the application layer.
+The goal of this architecture is to provide a reusable rendering backend that can be integrated into different applications or extended into a more complete engine.
 
 ### Future Improvements
 
-The current implementation focuses on experimentation and learning. Several improvements are planned:
+The current implementation focuses on clarity and extensibility. The next steps aim to improve both performance and rendering capabilities:
 
-- cleaner separation between renderer and application
+- Deferred rendering pipeline
 
-- support for deferred rendering
+- Improved shadow techniques such as cascaded shadow maps
 
-- improved shadow techniques such as cascaded shadow maps
+- CPU/GPU optimizations, such as draw call batching, resource reuse, and reduced state changes
 
-- better resource management and abstraction
+- Global illumination experiments, exploring real-time techniques to extend beyond direct lighting and IBL
 
-- improved lighting features such as global illumination experiments
+- Render pipeline extensibility, moving toward a more configurable system (e.g., render passes / render graph)
 
 ## Gallery
 

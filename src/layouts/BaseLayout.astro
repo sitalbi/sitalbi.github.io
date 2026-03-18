@@ -486,6 +486,29 @@ const { title = "Portfolio", description = "" } = Astro.props;
         transform: scale(1.1);
       }
 
+      :global(.hero) {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 2rem;
+      }
+
+      :global(.hero-text) {
+        flex: 1;
+      }
+
+      :global(.hero-image) {
+        flex-shrink: 0;
+        margin-right: 15%;
+      }
+
+      :global(.hero-image img) {
+        width: 150px; /* adjust */
+        height: 150px;
+        object-fit: cover;
+        border-radius: 50%; /* optional: circular avatar */
+      }
+
       @media (max-width: 720px) {
         .project-gallery {
           grid-template-columns: 1fr;
