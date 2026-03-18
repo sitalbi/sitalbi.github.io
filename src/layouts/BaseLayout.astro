@@ -407,7 +407,10 @@ const { title = "Portfolio", description = "" } = Astro.props;
       }
 
       :global(.see-more-button) {
-        display: inline-block;
+        display: inline-flex;
+        align-items: center; /* <-- vertical alignment fix */
+        gap: 0.5rem;
+
         padding: 8px 16px;
         border-radius: 8px;
         border: 1px solid var(--border);
@@ -415,6 +418,7 @@ const { title = "Portfolio", description = "" } = Astro.props;
         text-decoration: none;
         color: var(--text);
         font-weight: 500;
+
         transition:
           background 0.15s ease,
           transform 0.1s ease;
