@@ -12,6 +12,12 @@ export const projects = [
     description: "Voxel game inspired by Minecraft written in C++ using OpenGL 4.5.",
   },
   {
+    title: "Signed Distance Field Raymarching",
+    url: "/projects/project-5",
+    image: "https://raw.githubusercontent.com/sitalbi/sdf-renderer/refs/heads/main/res/screenshots/screen1.png",
+    description: "An experimental real-time Signed Distance Field (SDF) raymarching renderer written in C++ and OpenGL.",
+  },
+  {
     title: "UE5 Gameplay prototype",
     url: "/projects/project-3",
     image: "/images/thirdperson.gif",
