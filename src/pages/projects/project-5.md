@@ -7,7 +7,7 @@ description: An experimental real-time Signed Distance Field (SDF) raymarching r
 # PBR Renderer
 
 <img
-  src="https://raw.githubusercontent.com/sitalbi/sdf-renderer/refs/heads/main/res/screenshots/screen1.png"
+  src="https://raw.githubusercontent.com/sitalbi/sdf-renderer/refs/heads/main/res/screenshots/screen1.gif"
   alt="Signed Distance Field Raymarching"
   width="100%"
 />
@@ -67,10 +67,8 @@ The project also includes a lightweight ImGui-based editor to modify scene param
 
 ### Future Improvements
 
-- Configurable per-shape composition operations
 - Reflections
 - PBR shading
-- Additional texturing
 - Improved anti-aliasing (exploring multiple approaches)
 - Performance optimizations
 

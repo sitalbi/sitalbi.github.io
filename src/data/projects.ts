@@ -14,7 +14,7 @@ export const projects = [
   {
     title: "Signed Distance Field Raymarching",
     url: "/projects/project-5",
-    image: "https://raw.githubusercontent.com/sitalbi/sdf-renderer/refs/heads/main/res/screenshots/screen1.png",
+    image: "https://raw.githubusercontent.com/sitalbi/sdf-renderer/refs/heads/main/res/screenshots/screen1.gif",
     description: "An experimental real-time Signed Distance Field (SDF) raymarching renderer written in C++ and OpenGL.",
   },
   {
