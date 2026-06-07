@@ -74,4 +74,14 @@ The project also includes a lightweight ImGui-based editor to modify scene param
 
 ## Gallery
 
-Coming soon.
+<div class="project-gallery">
+  <img
+    src="https://github.com/sitalbi/sdf-renderer/raw/main/res/screenshots/screen2.png"
+    alt="Screenshot 1"
+    class="gallery-image"
+  />
+  <img
+    src="https://github.com/sitalbi/sdf-renderer/raw/main/res/screenshots/screen3.png"
+    alt="Screenshot 2"
+    class="gallery-image"
+  />
