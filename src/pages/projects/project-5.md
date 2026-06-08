@@ -38,7 +38,7 @@ An experimental real-time Signed Distance Field (SDF) raymarching renderer writt
 This project is a personal rendering experiment focused on real-time SDF rendering and raymarching.  
 The scene is rendered by raymarching SDF primitives in the fragment shader over a fullscreen quad, with shape composition and shading evaluated procedurally at runtime.
 
-The goal of the project is to explore the foundations of implicit surface rendering and build a deeper understanding of rendering techniques outside of a traditional rasterization pipeline.
+The goal of the project is to explore the possibilities of implicit surface rendering outside of a traditional rasterization pipeline.
 
 ## Features
 
@@ -46,7 +46,7 @@ The goal of the project is to explore the foundations of implicit surface render
 - Primitive support: spheres, rounded boxes, planes
 - Scene composition using SDF operations
 - Skybox background
-- Basic ambient + diffuse lighting with soft shadows.
+- PBR shading (albedo, metalic, roughness, ambient occlusion) with image based lighting (IBL)
 - Basic scene editor with ImGui:
   - inspect and edit shapes
   - create / delete shapes
@@ -55,22 +55,22 @@ The goal of the project is to explore the foundations of implicit surface render
 
 ## Technical Details
 
-The renderer uses a fullscreen quad and performs raymarching in the fragment shader to evaluate the scene. Each object is represented as a signed distance function, and the final scene is built through SDF composition operations such as unions and smooth unions.
+The renderer uses a fullscreen quad and performs raymarching in the fragment shader to evaluate a scene composed of signed distance functions. Each primitive is represented by an SDF, and the final scene is built through operations such as union, smooth union, intersection, subtraction, and smooth subtraction.
 
-Surface normals are reconstructed from the SDF gradient using finite differences, used for real-time lighting and shadowing.  
+Surface normals are reconstructed from the SDF gradient using finite differences and are used for real-time lighting, reflections, and shadowing. The renderer implements a physically based shading model using a Cook-Torrance BRDF with configurable material parameters such as albedo, metallic, roughness, and ambient occlusion.
 
-The current lighting model is based on simple ambient and diffuse shading, with soft shadows computed through secondary raymarching toward the light source and checking for light obstruction.
+Image-based lighting is supported through HDR environment maps. The renderer converts an equirectangular HDR texture into a cubemap, generates irradiance and prefiltered environment maps, and uses a BRDF lookup texture for specular IBL. This allows metallic and rough surfaces to reflect the environment with roughness-dependent filtering.
 
-Image quality is improved through optional supersampling anti-aliasing, where multiple subpixel samples are evaluated and averaged per pixel.
+Direct lighting is provided through a configurable light, with soft shadows computed by secondary raymarching toward the light source. The final image is tone mapped and gamma corrected, with optional supersampling anti-aliasing for improved image quality.
 
-The project also includes a lightweight ImGui-based editor to modify scene parameters interactively during runtime.
+The project also includes a lightweight ImGui-based editor for modifying scene objects, material parameters, lighting settings, and raymarching quality at runtime. Selected objects can be manipulated interactively using ImGuizmo translation and scaling controls.
 
 ### Future Improvements
 
-- Reflections
-- PBR shading
-- Improved anti-aliasing (exploring multiple approaches)
-- Performance optimizations
+Future improvements will focus on scalability, performance, and editor usability. Moving scene data from uniform arrays to SSBOs to support larger scenes and cleaner GPU-side data access. Separating distance-only SDF evaluation from full surface and material evaluation, which should reduce the cost of raymarching, normal reconstruction, and shadow rays.
+
+Additional rendering improvements would be the implementation of some acceleration structure and also exploring cheaper anti-aliasing methods such as FXAA or temporal accumulation.
+
 
 ## Gallery
 
