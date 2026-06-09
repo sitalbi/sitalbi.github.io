@@ -1,14 +1,14 @@
 ---
 layout: ../../layouts/BaseLayout.astro
-title: Voxel Game
-description: Voxel game inspired by Minecraft written in C++ using OpenGL 4.5.
+title: Third Person gameplay prototype
+description: A third person gameplay prototype on Unreal Engine 5.
 ---
 
-# Voxel Game
+# Third Person gameplay prototype
 
 <img
   src="/images/thirdperson.gif"
-  alt="Voxel Game"
+  alt="Third Person gameplay prototype"
   width="100%"
 />
 

@@ -4,7 +4,7 @@ title: Signed Distance Field Raymarching
 description: An experimental real-time Signed Distance Field (SDF) raymarching renderer written in C++ and OpenGL. 
 ---
 
-# PBR Renderer
+# Signed Distance Field Raymarching
 
 <img
   src="https://raw.githubusercontent.com/sitalbi/sdf-renderer/refs/heads/main/res/screenshots/screen1.gif"
