@@ -1,6 +1,6 @@
 ---
 layout: ../../layouts/BaseLayout.astro
-title: Third Person gameplay prototype
+title: UE5 Gameplay prototype
 description: A third person gameplay prototype on Unreal Engine 5.
 ---
 
@@ -8,7 +8,7 @@ description: A third person gameplay prototype on Unreal Engine 5.
 
 <img
   src="/images/thirdperson.gif"
-  alt="Third Person gameplay prototype"
+  alt="UE5 Gameplay prototype"
   width="100%"
 />
 
