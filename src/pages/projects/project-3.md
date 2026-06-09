@@ -4,7 +4,7 @@ title: UE5 Gameplay prototype
 description: A third person gameplay prototype on Unreal Engine 5.
 ---
 
-# Third Person gameplay prototype
+# UE5 Gameplay prototype
 
 <img
   src="/images/thirdperson.gif"
