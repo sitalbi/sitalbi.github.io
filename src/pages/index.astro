@@ -40,21 +40,13 @@ import { projects } from "../data/projects";
   <div class="projects-grid">
     {
       projects.slice(0, 2).map((project) => (
-        <article class="project-card">
-          <h3 class="project-card-title">
-            <a href={project.url}>{project.title}</a>
-          </h3>
+        <a href={project.url} class="project-card">
+          <img src={project.image} alt={project.title} class="project-image" />
 
-          <a href={project.url} class="project-image-link">
-            <img
-              src={project.image}
-              alt={project.title}
-              class="project-image"
-            />
-          </a>
+          <h2 class="project-card-title">{project.title}</h2>
 
           <p class="project-card-description">{project.description}</p>
-        </article>
+        </a>
       ))
     }
   </div>
