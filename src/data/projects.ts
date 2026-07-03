@@ -6,16 +6,16 @@ export const projects = [
     description: "A 3D Real Time physically based renderer written in C++ with OpenGL.",
   },
   {
-    title: "UE5 Gameplay prototype",
-    url: "/projects/project-3",
-    image: "/images/thirdperson.gif",
-    description: "A 3D Unreal Engine 5 action gameplay prototype using C++ and the Gameplay Ability System.",
-  },
-  {
     title: "Signed Distance Field Raymarching",
     url: "/projects/project-5",
     image: "https://raw.githubusercontent.com/sitalbi/sdf-renderer/refs/heads/main/res/screenshots/screen1.gif",
     description: "An experimental real-time Signed Distance Field (SDF) raymarching renderer written in C++ and OpenGL.",
+  },
+  {
+    title: "UE5 Gameplay prototype",
+    url: "/projects/project-3",
+    image: "/images/thirdperson.gif",
+    description: "A 3D Unreal Engine 5 action gameplay prototype using C++ and the Gameplay Ability System.",
   },
   {
     title: "Voxel Game",
