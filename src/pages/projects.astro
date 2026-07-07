@@ -13,9 +13,14 @@ import { projects } from "../data/projects";
         <a href={project.url} class="project-card">
           <img src={project.image} alt={project.title} class="project-image" />
 
-          <h2 class="project-card-title">{project.title}</h2>
-
-          <p class="project-card-description">{project.description}</p>
+          <div class="project-card-body">
+            <div class="project-card-kicker">Personal project</div>
+            <h2 class="project-card-title">{project.title}</h2>
+            <p class="project-card-description">{project.description}</p>
+            <div class="project-card-tags">
+              {project.tags.map((tag) => <span>{tag}</span>)}
+            </div>
+          </div>
         </a>
       ))
     }

@@ -6,7 +6,7 @@ import { projects } from "../data/projects";
 <BaseLayout title="Simon Talbi" description="Portfolio website">
  <div class="hero">
   <div class="hero-text">
-    <h1>Hi, I'm Simon !</h1>
+    <h1>Hi, I'm Simon!</h1>
     <h2 class="muted"><i>Game and Engine Programmer</i></h2>
   </div>
 
@@ -15,44 +15,60 @@ import { projects } from "../data/projects";
   </div>
 </div>
 
-  <p>
-    I am a passionate french game programmer, currently working in Japan. This website
-    presents a selection of personal projects related to game
-    programming, rendering, and engine development.
-  </p>
+<p>
+  I am a passionate French game programmer currently working in Japan.
+  This website showcases a selection of my personal projects focused on
+  game programming, rendering, and engine development.
+</p>
 
 <h2>About</h2>
 
 <p>
-  After graduating with a master's degree in Software Engineering from the University of Bordeaux, France, 
-  I now work in the game industry in Japan as a game programmer on various projects, including AA and AAA titles. 
-  My work involves game programming, engine development, and R&D on game-related systems.
-  
-  In my free time, I enjoy learning and experimenting with different technical topics through personal projects.
+  After graduating with a master's degree in Software Engineering from the University of Bordeaux, France,
+  I moved to Japan, where I now work as a game programmer on a variety of AA and AAA projects.
+  My work includes gameplay programming, engine development, and R&D on game-related systems.
 </p>
 
 <p>
-  My main interests include game systems, engine programming, rendering technology, and technical architecture.
+  In my free time, I enjoy learning and experimenting with different technical topics through personal projects.
+  My main interests include game systems, engine programming, rendering technology, performance optimization,
+  and technical architecture.
 </p>
 
-  <h2>Some of my projects</h2>
+  <h2>A selection of personal projects</h2>
 
   <div class="projects-grid">
     {
-      projects.slice(0, 2).map((project) => (
+      projects.map((project) => (
         <a href={project.url} class="project-card">
           <img src={project.image} alt={project.title} class="project-image" />
 
-          <h2 class="project-card-title">{project.title}</h2>
-
-          <p class="project-card-description">{project.description}</p>
+          <div class="project-card-body">
+            <div class="project-card-kicker">Personal project</div>
+            <h2 class="project-card-title">{project.title}</h2>
+            <p class="project-card-description">{project.description}</p>
+            <div class="project-card-tags">
+              {project.tags.map((tag) => <span>{tag}</span>)}
+            </div>
+          </div>
         </a>
       ))
     }
   </div>
 
   <div class="projects-more">
-    <a href="/projects" class="see-more-button">View all projects →</a>
+    <a
+      href="https://github.com/sitalbi"
+      target="_blank"
+      rel="noopener noreferrer"
+      class="see-more-button"
+    >
+      <img
+        src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0Ij48cGF0aCBmaWxsPSJjdXJyZW50Q29sb3IiIGQ9Ik0xMiAyQTEwIDEwIDAgMCAwIDIgMTJjMCA0LjQyIDIuODcgOC4xNyA2Ljg0IDkuNWMuNS4wOC42Ni0uMjMuNjYtLjV2LTEuNjljLTIuNzcuNi0zLjM2LTEuMzQtMy4zNi0xLjM0Yy0uNDYtMS4xNi0xLjExLTEuNDctMS4xMS0xLjQ3Yy0uOTEtLjYyLjA3LS42LjA3LS42YzEgLjA3IDEuNTMgMS4wMyAxLjUzIDEuMDNjLjg3IDEuNTIgMi4zNCAxLjA3IDIuOTEuODNjLjA5LS42NS4zNS0xLjA5LjYzLTEuMzRjLTIuMjItLjI1LTQuNTUtMS4xMS00LjU1LTQuOTJjMC0xLjExLjM4LTIgMS4wMy0yLjcxYy0uMS0uMjUtLjQ1LTEuMjkuMS0yLjY0YzAgMCAuODQtLjI3IDIuNzUgMS4wMmMuNzktLjIyIDEuNjUtLjMzIDIuNS0uMzNzMS43MS4xMSAyLjUuMzNjMS45MS0xLjI5IDIuNzUtMS4wMiAyLjc1LTEuMDJjLjU1IDEuMzUuMiAyLjM5LjEgMi42NGMuNjUuNzEgMS4wMyAxLjYgMS4wMyAyLjcxYzAgMy44Mi0yLjM0IDQuNjYtNC41NyA0LjkxYy4zNi4zMS42OS45Mi42OSAxLjg1VjIxYzAgLjI3LjE2LjU5LjY3LjVDMTkuMTQgMjAuMTYgMjIgMTYuNDIgMjIgMTJBMTAgMTAgMCAwIDAgMTIgMiIvPjwvc3ZnPg=="
+        alt="GitHub"
+      />
+      More on GitHub
+    </a>
   </div>
 
   <h2>Links</h2>

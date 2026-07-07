@@ -13,6 +13,7 @@ description: 3D Real Time Physically Based Renderer in C++ and OpenGL
 />
 
 
+
 <div class="project-meta">
 
 <div class="project-links">
@@ -27,6 +28,8 @@ description: 3D Real Time Physically Based Renderer in C++ and OpenGL
 <span>OpenGL</span>
 <span>PBR</span>
 <span>Rendering</span>
+</div>
+
 </div>
 
 </div>
