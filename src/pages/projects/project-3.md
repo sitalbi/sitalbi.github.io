@@ -29,42 +29,84 @@ description: A third person gameplay prototype on Unreal Engine 5.
 
 </div>
 
-A 3D Unreal Engine 5 action gameplay prototype focused on character abilities, combat systems, and gameplay architecture using C++ and the Gameplay Ability System.
+A third-person action gameplay prototype developed in Unreal Engine 5, focused on character abilities, combat systems, responsive controls, and reusable gameplay architecture using C++ and the Gameplay Ability System.
 
 ## Overview
 
-This project is a third-person gameplay prototype developed in Unreal Engine 5. Its original goal was to experiment with gameplay 3C (Controls, Character, and Camera), but it has since evolved into a Gameplay Ability System (GAS) learning project focused on building reusable gameplay systems in C++.
+This project is a third-person action gameplay prototype developed in Unreal Engine 5.
 
-The project uses a GAS-driven architecture for character abilities, combat interactions, animation integration, attribute management, and gameplay events. The long-term objective is to create a solid gameplay framework that can serve as a foundation for more advanced action-combat mechanics.
+It originally started as an experiment around gameplay 3C — Controls, Character, and Camera — and gradually evolved into a broader action-combat prototype built around Unreal Engine's Gameplay Ability System.
+
+The main goal is to explore how player abilities, combat interactions, animation, attributes, and feedback systems can work together to create responsive and extensible gameplay mechanics.
+
+While the project is also used to deepen my understanding of GAS and Unreal Engine architecture, the primary focus remains on building and iterating on player-facing gameplay systems.
 
 ## Features
 
-- Third-person character controller based on Unreal Engine 5
-- C++ gameplay architecture
-- Gameplay Ability System integration
-- Enhanced Input integration with GAS
-- Directional dash ability using root motion
-- Reusable attack and combo framework
-- GAS-driven combat system (attributes, damage, hit reactions, death)
-- Gameplay Events and Gameplay Cues for combat interactions and visual feedback
-- Animation montage integration for gameplay abilities
+* Third-person character movement and controls
+* C++ gameplay architecture
+* Gameplay Ability System integration
+* Enhanced Input integration with gameplay abilities
+* Directional dash with root-motion-based movement
+* Reusable attack and combo framework
+* Attribute-based health and damage system
+* Enemy hit reactions and death handling
+* Gameplay Events for combat timing and interactions
+* Gameplay Cues for visual gameplay feedback
+* Animation montage integration with gameplay abilities
+* Data-driven weapon and combat configuration
 
-## Technical Details
+## Gameplay Systems
 
-The project uses Unreal Engine 5 and C++ to implement a modular gameplay architecture built around the Gameplay Ability System. Character actions are encapsulated as Gameplay Abilities, allowing input handling, animation playback, gameplay logic, and combat interactions to remain decoupled and reusable.
+### Character Abilities
 
-Movement abilities are implemented using GAS and root motion tasks. The dash ability supports directional movement and directional animation playback based on player input.
+Character actions are implemented as Gameplay Abilities, allowing movement, attacks, animation playback, and gameplay state changes to be handled through a common ability framework.
 
-Combat is structured around a reusable attack ability base class. Attack abilities use Gameplay Events and animation notifies to drive hit detection and combat timing. Weapon data assets define combat parameters such as damage values and Gameplay Effects, allowing combat behavior to be configured independently from ability implementations.
+The directional dash is one example of this approach. Player input determines the dash direction, while root motion controls movement and directional montage sections provide matching animation feedback.
 
-Damage is applied through Gameplay Effects and Attribute Sets. Enemies use a health attribute system and react to incoming attacks through Gameplay Event-triggered hit reaction abilities. Directional hit reactions determine the appropriate animation section to play based on the attacker's relative position.
+This structure makes it possible to experiment with new abilities while keeping input, movement logic, animation, and gameplay state clearly separated.
 
-Visual combat feedback is handled through Gameplay Cues, enabling effects such as hit flashes to remain decoupled from gameplay logic. This architecture allows gameplay systems, animation systems, and visual presentation systems to remain independent while communicating through GAS events and tags.
+### Combat
 
-Current development focuses on expanding the combat framework, improving enemy interactions, and continuing to explore scalable GAS-based gameplay patterns.
+The combat system is built around reusable attack abilities rather than individual hard-coded attacks.
+
+Attack timing is driven by animation events, while Gameplay Events are used to communicate between animation and gameplay logic. Hit detection can therefore remain synchronized with the active portion of an attack animation.
+
+Weapon data defines parameters such as damage and Gameplay Effects, allowing individual attacks and weapons to be configured without duplicating combat logic.
+
+Damage is applied through Gameplay Effects and Attribute Sets. Enemies react to incoming attacks through dedicated hit-reaction abilities, with the reaction direction determined from the relative position of the attacker.
+
+This allows attacks to produce different reactions depending on where the hit originated.
+
+### Gameplay Feedback
+
+Gameplay Cues are used for visual feedback such as hit flashes and other combat effects.
+
+Keeping presentation feedback separate from the core combat logic makes it easier to iterate on how attacks feel without modifying damage or ability behavior.
+
+Animation montages, hit reactions, ability events, and Gameplay Cues work together to reinforce the timing and readability of combat interactions.
+
+## Architecture
+
+The project uses Unreal Engine 5 and C++ with GAS as the foundation for a modular gameplay architecture.
+
+Gameplay Abilities encapsulate individual character actions, while Gameplay Events and Gameplay Tags provide communication between systems. Attribute Sets and Gameplay Effects handle character state and combat values, and data assets are used where appropriate to keep gameplay parameters configurable.
+
+The objective is not only to build individual mechanics, but to create systems that remain flexible enough to support continued gameplay experimentation.
+
+## Current Development
+
+Current work focuses on expanding the combat system and improving the overall feel of player interactions.
+
+Planned areas of development include:
+
+* Additional attacks and abilities
+* More advanced combo behavior
+* Improved enemy reactions and interactions
+* Further iteration on character movement and responsiveness
+* More gameplay feedback and combat polish
+* Continued experimentation with scalable GAS-based gameplay patterns
 
 ## Gallery
 
 Coming soon.
-
-</div>

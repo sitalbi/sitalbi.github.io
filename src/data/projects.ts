@@ -1,17 +1,24 @@
 export const projects = [
   {
+    title: "UE5 Gameplay Prototype",
+    url: "/projects/project-3",
+    image: "/images/thirdperson.gif",
+    description: "A 3D Unreal Engine 5 action gameplay prototype using C++ and the Gameplay Ability System.",
+    tags: ["C++", "UE5", "GAS", "Gameplay mechanics"],
+ },
+  {
+    title: "Procedural Animation Prototype",
+    url: "/projects/project-4",
+    image: "/images/anim_procedural.gif",
+    description: "Procedural animation prototype project in Unity.",
+    tags: ["C#", "Unity", "IK", "Animation", "Game feel"],
+  }, 
+  {
     title: "PBR Renderer",
     url: "/projects/project-1",
     image: "https://raw.githubusercontent.com/sitalbi/PBR-Renderer/refs/heads/main/res/screenshots/screen1.png",
     description: "A 3D real-time physically based renderer written in C++ with OpenGL.",
     tags: ["C++", "OpenGL", "PBR", "Rendering"],
-  },
-  {
-    title: "UE5 Gameplay Prototype",
-    url: "/projects/project-3",
-    image: "/images/thirdperson.gif",
-    description: "A 3D Unreal Engine 5 action gameplay prototype using C++ and the Gameplay Ability System.",
-    tags: ["C++", "UE5", "GAS", "Gameplay"],
   },
   {
     title: "Signed Distance Field Raymarching",
@@ -26,12 +33,5 @@ export const projects = [
     image: "/images/voxl.png",
     description: "Voxel game inspired by Minecraft written in C++ using OpenGL 4.5.",
     tags: ["C++", "OpenGL", "Voxel", "Engine"],
-  },
-  {
-    title: "Procedural Animation Prototype",
-    url: "/projects/project-4",
-    image: "/images/anim_procedural.gif",
-    description: "Procedural animation prototype project in Unity.",
-    tags: ["C#", "Unity", "IK", "Animation"],
   },
 ];

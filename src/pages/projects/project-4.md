@@ -29,22 +29,37 @@ description: A simple procedural animation prototype in Unity.
 
 </div>
 
-A simple procedural animation prototype in Unity.
+A procedural animation prototype developed in Unity to explore runtime character motion, inverse kinematics, and animation systems that react dynamically to the environment.
 
 ## Overview
 
-This is a simple procedural animation prototype in Unity. It was started as a learning exercise to experiment with procedural animation and related algorithms. In the future, the goal would be to go back to this project to improve and experiment further more complex procedural animations.
+This project is a procedural animation prototype developed in Unity as a learning exercise around character animation and runtime motion generation.
+
+The goal is to experiment with techniques that allow character movement and posing to react dynamically to gameplay conditions rather than relying entirely on predefined animation clips.
+
+The project is also an opportunity to better understand the relationship between gameplay systems, character movement, inverse kinematics, and animation.
 
 ## Features
 
-Coming soon.
+* Procedural character animation
+* Runtime pose adjustment
+* Inverse kinematics experimentation
+* Dynamic limb positioning
+* Character movement and animation interaction
+* Environment-aware animation behavior
 
 ## Technical Details
 
-Coming soon.
+The project explores procedural animation techniques implemented in Unity using C#.
+
+Rather than relying exclusively on authored animation clips, parts of the character pose are calculated and adjusted at runtime. This makes it possible to experiment with animation behaviors that respond directly to character movement and the surrounding environment.
+
+The prototype focuses on understanding the mathematical and technical foundations behind procedural animation, including inverse kinematics, target positioning, joint constraints, and runtime pose modification.
+
+A particular area of interest is how these systems can complement traditional animation to create characters that react more naturally to gameplay situations.
+
+Future development may explore more advanced procedural locomotion, terrain adaptation, improved IK systems, and closer integration between character controls and animation behavior.
 
 ## Gallery
 
 Coming soon.
-
-</div>
