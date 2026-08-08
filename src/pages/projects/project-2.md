@@ -30,62 +30,81 @@ description: Voxel game inspired by Minecraft written in C++ using OpenGL 4.5.
 
 </div>
 
-Voxel game inspired by Minecraft written in C++ using OpenGL 4.5.
+Voxel game inspired by Minecraft, written in C++ using OpenGL 4.5.
 
 ## Overview
 
-This is a demo of a Minecraft-inspired voxel game. It contains basic movement and interaction (placing and removing cubes). The world is procedurally generated and only contains one biome at the moment. 
+This project is a small Minecraft-inspired voxel game developed from scratch in C++ and OpenGL.
 
-The plan going forward is to extend the features: adding multi-block placement, multi biomes, caves, light-emitting blocks, etc...
+The main focus is on the technical systems behind a voxel world: chunk-based terrain management, procedural generation, mesh optimization, asynchronous chunk generation, voxel collision detection, and block interaction.
+
+The world is generated procedurally and streams around the player as they move. The player can walk, jump, fly, place blocks, and remove blocks.
 
 ## Features
 
-This demo includes the following features:
-
-- Chunk-based rendering
-- Infinite world generation using basic thread pool for chunk generation
-- Basic player movement
-- Basic block interaction (placing and removing blocks)
-- Ambient occlusion
-- Day/Night cycle
+* Chunk-based voxel world
+* Procedural world generation
+* Asynchronous chunk generation using a thread pool
+* Greedy meshing
+* Voxel-based player collision detection
+* Walking, jumping, sprinting, and flying
+* Block selection using ray casting
+* Block placement and removal
+* Voxel ambient occlusion
+* Day/night cycle
 
 ## Technical Details
 
 ### Chunk System
 
-The world is partitioned into fixed-size chunks used as the main world unit.
-This keeps updates localized and makes streaming terrain around the player manageable.
-In its current form, this system is intentionally simple, but it already allows the world to stream in progressively without freezing the application.
+The world is partitioned into fixed-size chunks that act as the main unit for terrain generation, storage, meshing, and updates.
+
+Only the relevant surrounding chunks need to be generated and maintained, allowing the world to progressively stream around the player instead of generating the entire terrain upfront.
+
+This also keeps operations such as block modifications and mesh regeneration localized to individual chunks.
 
 ### Greedy Meshing
 
-To avoid the cost of generating one cube mesh per voxel, the project uses [greedy meshing](https://0fps.net/2012/06/30/meshing-in-a-minecraft-game/).
-Adjacent faces of the same block type are merged into larger quads, which greatly reduces mesh complexity and improves rendering performance.
+Rendering every voxel as an individual cube would generate a large number of unnecessary vertices and draw geometry for faces that are never visible.
+
+The project therefore uses [greedy meshing](https://0fps.net/2012/06/30/meshing-in-a-minecraft-game/) to combine adjacent visible faces of the same block type into larger quads.
+
+This significantly reduces the amount of geometry generated for each chunk compared with a naive one-cube-per-voxel approach.
 
 ### Asynchronous Chunk Generation
 
-Chunk generation is offloaded to a small thread pool.
-This allows terrain data to be created in the background while the main thread continues handling rendering and player interaction, reducing visible stalls during world streaming.
+Terrain generation is performed using a small thread pool rather than entirely on the main thread.
+
+Chunk data can therefore be generated in the background while the main thread continues rendering the world and processing player input.
+
+This reduces stalls while new terrain is being generated as the player moves through the world.
+
+### Player Movement & Voxel Collision
+
+The project implements a lightweight collision system specifically for the voxel world rather than relying on an external physics engine.
+
+The player is represented by a simple bounding volume and collision is determined by querying the occupancy of the surrounding voxel cells.
+
+Horizontal movement is resolved independently along the X and Z axes. When movement intersects a solid voxel, the player position is corrected to the corresponding block boundary and movement along that axis is stopped.
+
+Vertical collision is handled separately for floors and ceilings. The same voxel queries are also used to determine whether the player is grounded, allowing the movement system to support gravity and jumping.
+
+A flying mode bypasses collision and gravity for easier navigation and debugging of the generated world.
+
+### Block Interaction
+
+Blocks are selected using a ray cast from the player's camera into the voxel world.
+
+The ray is sampled through the world until it encounters a selectable voxel. The hit block and approximate face normal are then used to determine which block should be removed or where a new block should be placed.
+
+When a block is modified, its chunk is updated so that the corresponding geometry can be regenerated.
 
 ### Voxel Ambient Occlusion
 
-Ambient occlusion is computed from neighboring block occupancy during mesh generation and stored directly in the generated vertices.
+Ambient occlusion is calculated during chunk mesh generation using the occupancy of neighboring voxels.
 
-### Future Improvements
+The resulting occlusion values are stored directly in the generated vertex data, providing inexpensive local shading around voxel corners and edges without requiring a screen-space ambient occlusion pass.
 
-Next steps include better chunk streaming priority, stronger multithreading architecture, visibility culling, more efficient chunk rebuilds, and more advanced world generation.
+## Future Improvements
 
-## Gallery
-
-<div class="project-gallery">
-  <img
-    src="/images/voxl.png"
-    alt="Screenshot 1"
-    class="gallery-image"
-  />
-  <img
-    src="https://raw.githubusercontent.com/sitalbi/voxl/refs/heads/main/res/repo/voxl.gif"
-    alt="Screenshot 2"
-    class="gallery-image"
-  />
-</div>
+Possible improvements include more advanced chunk streaming and prioritization, improved multithreading and job scheduling, visibility culling, more efficient chunk mesh rebuilding, faster voxel traversal for block selection, and more varied procedural world generation.
