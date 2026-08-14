@@ -56,6 +56,13 @@ The goal is to build responsive 3D platforming mechanics from a gameplay-program
 The current prototype includes a size-changing mechanic that allows the player to smoothly shrink into a much smaller form.
 
 The mechanic is intended to be used for traversal and exploration, such as accessing small passages or entrances that are difficult to notice or impossible to enter at normal size.
+
+## Future improvements
+
+- Refactor the character controller around a locomotion state machine to improve the architecture and make it easier to add new movement states, abilities, and gameplay mechanics without increasing complexity in the main controller.
+- Add more abilities
+- Implement basic enemies
+
 ## Gallery
 
 Coming soon.
