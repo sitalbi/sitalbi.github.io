@@ -59,9 +59,10 @@ The mechanic is intended to be used for traversal and exploration, such as acces
 
 ## Future improvements
 
-- Refactor the character controller around a locomotion state machine to improve the architecture and make it easier to add new movement states, abilities, and gameplay mechanics without increasing complexity in the main controller.
-- Add more abilities
-- Implement basic enemies
+- Refactor locomotion around a state machine to make additional movement states and advanced abilities easier to integrate.
+- Introduce a lightweight reusable ability system for mechanics and special abilities.
+- Expand the greybox level with platforming challenges designed around the controller and abilities.
+- Implement basic enemies and player-enemy combat/interaction.
 
 ## Gallery
 
