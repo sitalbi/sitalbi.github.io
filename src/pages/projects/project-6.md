@@ -7,7 +7,7 @@ description: 3D Platformer prototype on Godot
 # 3D Platformer Prototype
 
 <img
-  src="/images/platformer.png"
+  src="https://raw.githubusercontent.com/sitalbi/Platformer-Proto/refs/heads/main/res/screenshots/platformer.png"
   alt="Platformer"
   width="100%"
 />
@@ -68,12 +68,12 @@ The mechanic is intended to be used for traversal and exploration, such as acces
 
 <div class="project-gallery">
   <img
-    src="/images/platformer.gif"
+    src="https://raw.githubusercontent.com/sitalbi/Platformer-Proto/refs/heads/main/res/screenshots/platformer.gif"
     alt="Screenshot 1"
     class="gallery-image"
   />
   <img
-    src="/images/platformer.png"
+    src="https://raw.githubusercontent.com/sitalbi/Platformer-Proto/refs/heads/main/res/screenshots/platformer.png"
     alt="Screenshot 2"
     class="gallery-image"
   />
