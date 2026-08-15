@@ -66,4 +66,15 @@ The mechanic is intended to be used for traversal and exploration, such as acces
 
 ## Gallery
 
-Coming soon.
+<div class="project-gallery">
+  <img
+    src="/images/platformer.gif"
+    alt="Screenshot 1"
+    class="gallery-image"
+  />
+  <img
+    src="/images/platformer.png"
+    alt="Screenshot 2"
+    class="gallery-image"
+  />
+</div>

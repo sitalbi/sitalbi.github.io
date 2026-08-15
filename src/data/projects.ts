@@ -10,7 +10,7 @@ export const projects = [
  {
     title: "3D Platformer Prototype",
     url: "/projects/project-6",
-    image: "/images/platformer.png",
+    image: "/images/platformer.gif",
     description: "3D Platformer prototype on Godot.",
     tags: ["C#", "Godot", "Platformer", "Character Controller", "Gameplay Systems"],
     category: "GAMEPLAY PROGRAMMING"
