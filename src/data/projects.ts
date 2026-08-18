@@ -8,37 +8,37 @@ export const projects = [
     category: "GAMEPLAY PROGRAMMING"
  },
  {
-    title: "3D Platformer Prototype",
-    url: "/projects/project-6",
-    image: "//raw.githubusercontent.com/sitalbi/Platformer-Proto/refs/heads/main/res/screenshots/platformer.gif",
-    description: "3D Platformer prototype on Godot.",
-    tags: ["C#", "Godot", "Platformer", "Character Controller", "Gameplay Systems"],
-    category: "GAMEPLAY PROGRAMMING"
- },
- {
    title: "PBR Renderer",
    url: "/projects/project-1",
    image: "https://raw.githubusercontent.com/sitalbi/PBR-Renderer/refs/heads/main/res/screenshots/screen1.png",
    description: "A 3D real-time physically based renderer written in C++ with OpenGL.",
    tags: ["C++", "OpenGL", "PBR", "IBL"],
    category: "RENDERING & GRAPHICS"
- },
- {
-   title: "Signed Distance Field Raymarching",
-   url: "/projects/project-5",
-   image: "https://raw.githubusercontent.com/sitalbi/sdf-renderer/refs/heads/main/res/screenshots/screen1.gif",
-   description: "An experimental real-time Signed Distance Field raymarching renderer written in C++ and OpenGL.",
-   tags: ["C++", "OpenGL", "SDF", "Raymarching", "Procedural Rendering"],
-   category: "RENDERING & GRAPHICS"
- },
- {
-   title: "Voxel Game",
-   url: "/projects/project-2",
-   image: "/images/voxl.png",
-   description: "Voxel game inspired by Minecraft written in C++ using OpenGL 4.5.",
-   tags: ["C++", "OpenGL", "Voxel", "Multithreading", "Greedy Meshing"],
-   category: "ENGINE & SYSTEMS"
- },
+  },
+  {
+    title: "Signed Distance Field Raymarching",
+    url: "/projects/project-5",
+    image: "https://raw.githubusercontent.com/sitalbi/sdf-renderer/refs/heads/main/res/screenshots/screen1.gif",
+    description: "An experimental real-time Signed Distance Field raymarching renderer written in C++ and OpenGL.",
+    tags: ["C++", "OpenGL", "SDF", "Raymarching", "Procedural Rendering"],
+    category: "RENDERING & GRAPHICS"
+  },
+  {
+    title: "Voxel Game",
+    url: "/projects/project-2",
+    image: "/images/voxl.png",
+    description: "Voxel game inspired by Minecraft written in C++ using OpenGL 4.5.",
+    tags: ["C++", "OpenGL", "Voxel", "Multithreading", "Greedy Meshing"],
+    category: "ENGINE & SYSTEMS"
+  },
+  {
+     title: "3D Platformer Prototype",
+     url: "/projects/project-6",
+     image: "https:////raw.githubusercontent.com/sitalbi/Platformer-Proto/refs/heads/main/res/screenshots/platformer.gif",
+     description: "3D Platformer prototype on Godot.",
+     tags: ["C#", "Godot", "Platformer", "Character Controller", "Gameplay Systems"],
+     category: "GAMEPLAY PROGRAMMING"
+  },
   {
     title: "Procedural Animation Prototype",
     url: "/projects/project-4",
