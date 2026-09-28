@@ -1,107 +1,67 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
+import ProjectList from "../components/ProjectList.astro";
 import { projects } from "../data/projects";
+import { experience } from "../data/experience";
 ---
 
 <BaseLayout title="Simon Talbi" description="Portfolio website">
- <div class="hero">
-  <div class="hero-text">
-    <h1>Hi, I'm Simon!</h1>
-    <h2 class="muted"><i>Game Programmer</i></h2>
-  </div>
-
-  <div class="hero-image">
-    <img src="https://avatars.githubusercontent.com/u/64929584?v=4" alt="Simon Talbi" />
-  </div>
-</div>
-
-<p> I am a French game programmer currently working in Japan, passionate about creating games and the technology behind them. I particularly enjoy developing gameplay systems, while also exploring game engines, rendering, and performance. This website showcases a selection of my personal game projects and technical experiments. </p>
-
-<h2>About</h2>
-
-<p>
-  After graduating with a master's degree in Software Engineering from the University of Bordeaux, France, I moved to Japan, where I now work as a game programmer contributing to both AA and AAA client projects as well as internal game development and R&D projects.
-  My professional experience includes gameplay programming in Unreal Engine 5, Unity and proprietary engines, development of game systems,
-  technical investigation, performance optimization, and R&D on game-related technologies.
-</p>
-
-<p>
-  I particularly enjoy developing gameplay systems and understanding how they interact with the underlying engine.
-  In my free time, I work on personal game prototypes and technical projects to explore topics such as character mechanics,
-  gameplay architecture, engine programming, rendering technology, and performance.
-</p>
-
-
-  <h2>A selection of personal projects</h2>
-
-  <div class="projects-grid">
-    {
-      projects.map((project) => (
-        <a href={project.url} class="project-card">
-          <img src={project.image} alt={project.title} class="project-image" />
-
-          <div class="project-card-body">
-            <div class="project-card-kicker">{project.category}</div>
-            <h2 class="project-card-title">{project.title}</h2>
-            <p class="project-card-description">{project.description}</p>
-            <div class="project-card-tags">
-              {project.tags.map((tag) => <span>{tag}</span>)}
-            </div>
-          </div>
+  <section class="intro" aria-labelledby="intro-title">
+    <div class="profile-column">
+      <img class="profile-photo" src="https://avatars.githubusercontent.com/u/64929584?v=4" alt="Simon Talbi" />
+      <div class="social-links" aria-label="Contact links">
+        <a href="mailto:simon.talbi0111@gmail.com" aria-label="Email Simon Talbi" title="Email">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 4H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2Zm0 4-8 5-8-5V6l8 5 8-5v2Z"/></svg>
         </a>
-      ))
-    }
-  </div>
+        <a href="https://github.com/sitalbi" target="_blank" rel="noopener noreferrer" aria-label="Simon Talbi on GitHub" title="GitHub">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2A10 10 0 0 0 2 12c0 4.42 2.87 8.17 6.84 9.5.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34-.46-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.87 1.52 2.34 1.07 2.91.83.09-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.92 0-1.11.38-2 1.03-2.71-.1-.25-.45-1.29.1-2.64 0 0 .84-.27 2.75 1.02A9.6 9.6 0 0 1 12 6.84c.85 0 1.71.11 2.5.33 1.91-1.29 2.75-1.02 2.75-1.02.55 1.35.2 2.39.1 2.64.65.71 1.03 1.6 1.03 2.71 0 3.82-2.34 4.66-4.57 4.91.36.31.69.92.69 1.85V21c0 .27.16.59.67.5A10 10 0 0 0 22 12 10 10 0 0 0 12 2Z"/></svg>
+        </a>
+        <a href="https://www.linkedin.com/in/simon-talbi/" target="_blank" rel="noopener noreferrer" aria-label="Simon Talbi on LinkedIn" title="LinkedIn">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14Zm-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.32 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.79ZM6.88 8.56a1.68 1.68 0 1 0 0-3.37 1.69 1.69 0 0 0 0 3.37Zm1.39 9.94v-8.37H5.5v8.37h2.77Z"/></svg>
+        </a>
+      </div>
+    </div>
+    <div class="intro-copy">
+      <p class="eyebrow">Game Programmer · Tokyo, Japan</p>
+      <h1 id="intro-title">Hi, I'm Simon!</h1>
+      <p>I am a French game programmer currently working in Japan, passionate about creating games and the technology behind them. I particularly enjoy developing gameplay systems, while also exploring game engines, rendering, and performance. This website showcases a selection of my personal game projects and technical experiments.</p>
+    </div>
+  </section>
 
-  <div class="projects-more">
-    <a
-      href="https://github.com/sitalbi"
-      target="_blank"
-      rel="noopener noreferrer"
-      class="see-more-button"
-    >
-      <img
-        src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0Ij48cGF0aCBmaWxsPSJjdXJyZW50Q29sb3IiIGQ9Ik0xMiAyQTEwIDEwIDAgMCAwIDIgMTJjMCA0LjQyIDIuODcgOC4xNyA2Ljg0IDkuNWMuNS4wOC42Ni0uMjMuNjYtLjV2LTEuNjljLTIuNzcuNi0zLjM2LTEuMzQtMy4zNi0xLjM0Yy0uNDYtMS4xNi0xLjExLTEuNDctMS4xMS0xLjQ3Yy0uOTEtLjYyLjA3LS42LjA3LS42YzEgLjA3IDEuNTMgMS4wMyAxLjUzIDEuMDNjLjg3IDEuNTIgMi4zNCAxLjA3IDIuOTEuODNjLjA5LS42NS4zNS0xLjA5LjYzLTEuMzRjLTIuMjItLjI1LTQuNTUtMS4xMS00LjU1LTQuOTJjMC0xLjExLjM4LTIgMS4wMy0yLjcxYy0uMS0uMjUtLjQ1LTEuMjkuMS0yLjY0YzAgMCAuODQtLjI3IDIuNzUgMS4wMmMuNzktLjIyIDEuNjUtLjMzIDIuNS0uMzNzMS43MS4xMSAyLjUuMzNjMS45MS0xLjI5IDIuNzUtMS4wMiAyLjc1LTEuMDJjLjU1IDEuMzUuMiAyLjM5LjEgMi42NGMuNjUuNzEgMS4wMyAxLjYgMS4wMyAyLjcxYzAgMy44Mi0yLjM0IDQuNjYtNC41NyA0LjkxYy4zNi4zMS42OS45Mi42OSAxLjg1VjIxYzAgLjI3LjE2LjU5LjY3LjVDMTkuMTQgMjAuMTYgMjIgMTYuNDIgMjIgMTJBMTAgMTAgMCAwIDAgMTIgMiIvPjwvc3ZnPg=="
-        alt="GitHub"
-      />
-      More on GitHub
-    </a>
-  </div>
+  <section aria-labelledby="about-title">
+    <h2 id="about-title">About</h2>
+    <p>After graduating with a master's degree in Software Engineering from the University of Bordeaux, France, I moved to Japan, where I now work as a game programmer contributing to both AA and AAA client projects as well as internal game development and R&D projects. My professional experience includes gameplay programming in Unreal Engine 5, Unity and proprietary engines, development of game systems, technical investigation, performance optimization, and R&D on game-related technologies.</p>
+    <p>I particularly enjoy developing gameplay systems and understanding how they interact with the underlying engine. In my free time, I work on personal game prototypes and technical projects to explore topics such as gameplay mechanics and architecture, engine programming, rendering technology, and performance.</p>
+  </section>
 
-  <h2>Links</h2>
+  <section aria-labelledby="experience-title">
+    <h2 id="experience-title">Experience</h2>
+    <div class="timeline">
+      {experience.map((item) => (
+        <article class="timeline-item">
+          <div class="timeline-meta"><time>{item.dates}</time><span>{item.location}</span></div>
+          <div class="timeline-copy">
+            <h3>{item.role}</h3>
+            <p class="company">{item.company}</p>
+            {item.description.map((line) => <p>{line}</p>)}
+          </div>
+        </article>
+      ))}
+    </div>
+  </section>
 
-  <div class="social-links">
-    <a
-      href="mailto:simon.talbi0111@gmail.com"
-      target="_blank"
-      rel="noopener noreferrer"
-    >
-      <img
-        src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0Ij48cGF0aCBmaWxsPSJjdXJyZW50Q29sb3IiIGQ9Ik00IDIwcS0uODI1IDAtMS40MTItLjU4N1QyIDE4VjZxMC0uODI1LjU4OC0xLjQxMlQ0IDRoMTZxLjgyNSAwIDEuNDEzLjU4OFQyMiA2djEycTAgLjgyNS0uNTg3IDEuNDEzVDIwIDIwem04LTdMNCA4djEwaDE2Vjh6bTAtMmw4LTVINHpNNCA4VjZ2MTJ6Ii8+PC9zdmc+"
-        alt="Mail"
-      />
-    </a>
+  <section aria-labelledby="projects-title">
+    <h2 id="projects-title">Featured Projects</h2>
+    <ProjectList items={projects} />
+    <a class="all-projects" href="/projects">All projects <span aria-hidden="true">→</span></a>
+  </section>
 
-    <a
-      href="https://github.com/sitalbi"
-      target="_blank"
-      rel="noopener noreferrer"
-    >
-      <img
-        src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0Ij48cGF0aCBmaWxsPSJjdXJyZW50Q29sb3IiIGQ9Ik0xMiAyQTEwIDEwIDAgMCAwIDIgMTJjMCA0LjQyIDIuODcgOC4xNyA2Ljg0IDkuNWMuNS4wOC42Ni0uMjMuNjYtLjV2LTEuNjljLTIuNzcuNi0zLjM2LTEuMzQtMy4zNi0xLjM0Yy0uNDYtMS4xNi0xLjExLTEuNDctMS4xMS0xLjQ3Yy0uOTEtLjYyLjA3LS42LjA3LS42YzEgLjA3IDEuNTMgMS4wMyAxLjUzIDEuMDNjLjg3IDEuNTIgMi4zNCAxLjA3IDIuOTEuODNjLjA5LS42NS4zNS0xLjA5LjYzLTEuMzRjLTIuMjItLjI1LTQuNTUtMS4xMS00LjU1LTQuOTJjMC0xLjExLjM4LTIgMS4wMy0yLjcxYy0uMS0uMjUtLjQ1LTEuMjkuMS0yLjY0YzAgMCAuODQtLjI3IDIuNzUgMS4wMmMuNzktLjIyIDEuNjUtLjMzIDIuNS0uMzNzMS43MS4xMSAyLjUuMzNjMS45MS0xLjI5IDIuNzUtMS4wMiAyLjc1LTEuMDJjLjU1IDEuMzUuMiAyLjM5LjEgMi42NGMuNjUuNzEgMS4wMyAxLjYgMS4wMyAyLjcxYzAgMy44Mi0yLjM0IDQuNjYtNC41NyA0LjkxYy4zNi4zMS42OS45Mi42OSAxLjg1VjIxYzAgLjI3LjE2LjU5LjY3LjVDMTkuMTQgMjAuMTYgMjIgMTYuNDIgMjIgMTJBMTAgMTAgMCAwIDAgMTIgMiIvPjwvc3ZnPg=="
-        alt="GitHub"
-      />
-    </a>
-
-    <a
-      href="https://www.linkedin.com/in/simon-talbi/"
-      target="_blank"
-      rel="noopener noreferrer"
-    >
-      <img
-        src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0Ij48cGF0aCBmaWxsPSJjdXJyZW50Q29sb3IiIGQ9Ik0xOSAzYTIgMiAwIDAgMSAyIDJ2MTRhMiAyIDAgMCAxLTIgMkg1YTIgMiAwIDAgMS0yLTJWNWEyIDIgMCAwIDEgMi0yem0tLjUgMTUuNXYtNS4zYTMuMjYgMy4yNiAwIDAgMC0zLjI2LTMuMjZjLS44NSAwLTEuODQuNTItMi4zMiAxLjN2LTEuMTFoLTIuNzl2OC4zN2gyLjc5di00LjkzYzAtLjc3LjYyLTEuNCAxLjM5LTEuNGExLjQgMS40IDAgMCAxIDEuNCAxLjR2NC45M3pNNi44OCA4LjU2YTEuNjggMS42OCAwIDAgMCAxLjY4LTEuNjhjMC0uOTMtLjc1LTEuNjktMS42OC0xLjY5YTEuNjkgMS42OSAwIDAgMC0xLjY5IDEuNjljMCAuOTMuNzYgMS42OCAxLjY5IDEuNjhtMS4zOSA5Ljk0di04LjM3SDUuNXY4LjM3eiIvPjwvc3ZnPg=="
-        alt="LinkedIn"
-      />
-    </a>
-  </div>
+  <section aria-labelledby="links-title">
+    <h2 id="links-title">Links</h2>
+    <div class="text-links">
+      <a href="mailto:simon.talbi0111@gmail.com">Email</a>
+      <a href="https://github.com/sitalbi" target="_blank" rel="noopener noreferrer">GitHub</a>
+      <a href="https://www.linkedin.com/in/simon-talbi/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+    </div>
+  </section>
 </BaseLayout>

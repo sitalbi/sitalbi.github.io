@@ -28,8 +28,7 @@ description: A third person gameplay prototype on Unreal Engine 5.
 </div>
 
 </div>
-
-A third-person action gameplay prototype developed in Unreal Engine 5, focused on character abilities, combat systems, responsive controls, and reusable gameplay architecture using C++ and the Gameplay Ability System.
+A third-person action gameplay prototype developed in Unreal Engine 5, focused on character abilities, combat systems, enemy AI, responsive controls, and reusable gameplay architecture using C++ and the Gameplay Ability System.
 
 ## Overview
 
@@ -37,9 +36,9 @@ This project is a third-person action gameplay prototype developed in Unreal Eng
 
 It originally started as an experiment around gameplay 3C — Controls, Character, and Camera — and gradually evolved into a broader action-combat prototype built around Unreal Engine's Gameplay Ability System.
 
-The main goal is to explore how player abilities, combat interactions, animation, attributes, and feedback systems can work together to create responsive and extensible gameplay mechanics.
+The main goal is to explore how player abilities, combat interactions, animation, attributes, enemy behavior, and feedback systems can work together to create responsive and extensible gameplay mechanics.
 
-While the project is also used to deepen my understanding of GAS and Unreal Engine architecture, the primary focus remains on building and iterating on player-facing gameplay systems.
+While the project is also used to deepen my understanding of GAS, StateTree, and Unreal Engine architecture, the primary focus remains on building and iterating on player-facing gameplay systems.
 
 ## Features
 
@@ -50,6 +49,7 @@ While the project is also used to deepen my understanding of GAS and Unreal Engi
 * Directional dash with root-motion-based movement
 * Reusable attack and combo framework
 * Attribute-based health and damage system
+* Enemy AI using StateTree and AI Perception
 * Enemy hit reactions and death handling
 * Gameplay Events for combat timing and interactions
 * Gameplay Cues for visual gameplay feedback
@@ -78,6 +78,14 @@ Damage is applied through Gameplay Effects and Attribute Sets. Enemies react to 
 
 This allows attacks to produce different reactions depending on where the hit originated.
 
+### Enemy AI
+
+Enemy behavior is currently implemented using Unreal Engine's StateTree system together with AI Perception.
+
+StateTree is used to organize basic combat behavior such as detecting the player, moving toward a target, and triggering attacks. Enemy attacks reuse the same Gameplay Ability-based combat systems used elsewhere in the project.
+
+The current AI remains intentionally simple, providing a foundation for testing combat interactions and expanding enemy behavior over time.
+
 ### Gameplay Feedback
 
 Gameplay Cues are used for visual feedback such as hit flashes and other combat effects.
@@ -90,18 +98,19 @@ Animation montages, hit reactions, ability events, and Gameplay Cues work togeth
 
 The project uses Unreal Engine 5 and C++ with GAS as the foundation for a modular gameplay architecture.
 
-Gameplay Abilities encapsulate individual character actions, while Gameplay Events and Gameplay Tags provide communication between systems. Attribute Sets and Gameplay Effects handle character state and combat values, and data assets are used where appropriate to keep gameplay parameters configurable.
+Gameplay Abilities encapsulate individual character actions, while Gameplay Events and Gameplay Tags provide communication between systems. Attribute Sets and Gameplay Effects handle character state and combat values, StateTree organizes enemy behavior, and data assets are used where appropriate to keep gameplay parameters configurable.
 
 The objective is not only to build individual mechanics, but to create systems that remain flexible enough to support continued gameplay experimentation.
 
 ## Current Development
 
-Current work focuses on expanding the combat system and improving the overall feel of player interactions.
+Current work focuses on expanding the combat system, enemy behavior, and the overall feel of player interactions.
 
 Planned areas of development include:
 
 * Additional attacks and abilities
 * More advanced combo behavior
+* Expanded StateTree-based enemy behaviors
 * Improved enemy reactions and interactions
 * Further iteration on character movement and responsiveness
 * More gameplay feedback and combat polish

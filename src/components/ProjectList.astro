@@ -1,0 +1,31 @@
+---
+import type { projects as ProjectCollection } from "../data/projects";
+
+type Project = (typeof ProjectCollection)[number];
+
+interface Props {
+  items: Project[];
+}
+
+const { items } = Astro.props;
+---
+
+<div class="project-list">
+  {
+    items.map((project) => (
+      <article class="project-row">
+        <a href={project.url} class="project-thumb" aria-label={`View ${project.title}`}>
+          <img src={project.image} alt={project.title} loading="lazy" />
+        </a>
+        <div class="project-copy">
+          <p class="project-category">{project.category}</p>
+          <h3><a href={project.url}>{project.title}</a></h3>
+          <p class="project-description">{project.description}</p>
+          <div class="project-card-tags" aria-label="Technologies">
+            {project.tags.map((tag) => <span>{tag}</span>)}
+          </div>
+        </div>
+      </article>
+    ))
+  }
+</div>
