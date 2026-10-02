@@ -52,7 +52,7 @@ import { experience } from "../data/experience";
 
   <section aria-labelledby="projects-title">
     <h2 id="projects-title">Featured Projects</h2>
-    <ProjectList items={projects} />
+    <ProjectList items={projects.slice(0, 4)} />
     <a class="all-projects" href="/projects">All projects <span aria-hidden="true">→</span></a>
   </section>
 

@@ -31,6 +31,14 @@ export const projects = [
     tags: ["C++", "OpenGL", "Voxel", "Multithreading", "Greedy Meshing"],
     category: "ENGINE & SYSTEMS"
   },
+  {
+    title: "Procedural Animation Prototype",
+    url: "/projects/project-4",
+    image: "/images/anim_procedural.gif",
+    description: "Procedural animation prototype project in Unity.",
+    tags: ["C#", "Unity", "IK", "Procedural Animation", "Character Animation"],
+    category: "GAMEPLAY PROGRAMMING",
+  }, 
   // {
   //    title: "3D Platformer Prototype",
   //    url: "/projects/project-6",
@@ -39,20 +47,12 @@ export const projects = [
   //    tags: ["C#", "Godot", "Platformer", "Character Controller", "Gameplay Systems"],
   //    category: "GAMEPLAY PROGRAMMING"
   // },
-  // {
-  //   title: "Procedural Animation Prototype",
-  //   url: "/projects/project-4",
-  //   image: "/images/anim_procedural.gif",
-  //   description: "Procedural animation prototype project in Unity.",
-  //   tags: ["C#", "Unity", "IK", "Procedural Animation", "Character Animation"],
-  //   category: "GAMEPLAY PROGRAMMING",
-  // }, 
-  // {
-  //   title: "2D Game Prototype",
-  //   url: "/projects/project-7",
-  //   image: "/images/2d.png",
-  //   description: "2D Gameplay Prototype to experiment ideas and techniques for 2D game development on Unity.",
-  //   tags: ["C#", "Unity", "2D", "State Machine", "Character Controller", "2D Combat"],
-  //   category: "GAMEPLAY PROGRAMMING",
-  // }, 
+  {
+    title: "2D Game Prototype",
+    url: "/projects/project-7",
+    image: "/images/2d.png",
+    description: "2D Gameplay Prototype to experiment ideas and techniques for 2D game development on Unity.",
+    tags: ["C#", "Unity", "2D", "State Machine", "Character Controller", "2D Combat"],
+    category: "GAMEPLAY PROGRAMMING",
+  }, 
 ];
