@@ -8,13 +8,23 @@ export type Experience = {
 
 export const experience: Experience[] = [
   {
-    role: "Game Programmer",
-    company: "Stage Games Inc.",
-    dates: "Feb 2025 — Present",
+    role: "Gameplay Programmer",
+    company: "Keywords Studio Japan",
+    dates: "Nov 2026 — Present",
     location: "Tokyo, Japan",
     description: [
-      "Game development and prototyping on game projects.",
-      "Work on both internal and client projects as a game programmer.",
+      // "Game development and prototyping on game projects.",
+      // "Work on both internal and client projects as a game programmer.",
+    ],
+  },
+  {
+    role: "Game Programmer",
+    company: "Stage Games Inc.",
+    dates: "Feb 2025 — Nov 2026",
+    location: "Tokyo, Japan",
+    description: [
+      // "Game development and prototyping on game projects.",
+      // "Work on both internal and client projects as a game programmer.",
     ],
   },
   {
@@ -23,8 +33,8 @@ export const experience: Experience[] = [
     dates: "Apr 2024 — Sep 2024",
     location: "Bordeaux, France",
     description: [
-      "R&D programmer intern at Ubisoft La Forge (R&D team).",
-      "Game Engine and library development, for machine learning bots deployment in game production.",
+      // "R&D programmer intern at Ubisoft La Forge (R&D team).",
+      // "Game Engine and library development, for machine learning bots deployment in game production.",
     ],
   },
 ];
